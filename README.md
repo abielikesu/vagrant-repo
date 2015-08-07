@@ -15,7 +15,8 @@ Examples:
 
   --> packer build ubuntu-15.04.json
 
-  Box created: ubuntu-15.04.box
+==> Builds finished. The artifacts of successful builds are:
+--> virtualbox-iso: 'virtualbox' provider box: ubuntu-15.04.box
 
   - Upload the new box to the central repository
 

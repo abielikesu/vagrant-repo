@@ -1,9 +1,16 @@
 #!/bin/bash
 #set -x
 
+# Absolute path to this script
+SCRIPT=$(readlink -f $0)
+# Absolute path this script is in
+SCRIPTPATH=`dirname $SCRIPT`
+
+TEMPLATE_DIR=${SCRIPTPATH}/template
+
 REPO_URL=/u01/packer/boxrepo
-TEMPLATE1=template/vbox.template1.json
-TEMPLATE2=template/vbox.template2.json
+TEMPLATE1=${TEMPLATE_DIR}/vbox.template1.json
+TEMPLATE2=${TEMPLATE_DIR}/vbox.template2.json
 BOX_CHECKSUM_TYPE="sha1"
 
 P_BOX_NAME=$1
@@ -49,7 +56,7 @@ then
   sed -e "s!BOX_NAME!$P_BOX_NAME!g"               \
       -e "s!BOX_DESCRIPTION!$P_BOX_DESCRIPTION!g" \
       < $TEMPLATE1 > $TEMP1
-  cat $TEMP1
+  #cat $TEMP1
   cat $TEMP1 >  ${BOX_JSON}
 
   rm $TEMP1
@@ -70,7 +77,7 @@ then
       -e "s#BOX_CHECKSUM#$BOX_CHECKSUM#g"            \
       -e "s#COMA#$COMA#g"  < $TEMPLATE2 > $TEMP2
   
-  cat $TEMP2
+  #cat $TEMP2
   
   # Find the location to add a new version
   LINEN=$(( $(sed -n '/]$/ {N; /\n}$/=}' ${BOX_JSON}) - 2))
