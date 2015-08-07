@@ -20,7 +20,7 @@ Examples:
 
   - Upload the new box to the central repository
 
-  --> vbox-repo.sh "ubuntu" "0.1" "ubuntu-15.04.box" "Ubuntu 15.04 box"
+  --> vboxrepo ubuntu 0.1 ubuntu-15.04.box "Ubuntu 15.04 box"
 
 
 Reference:
