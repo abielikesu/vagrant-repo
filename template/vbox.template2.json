@@ -1,0 +1,9 @@
+COMA{
+        "version": "BOX_VERSION",
+        "providers": [{
+                "name": "virtualbox",
+                "url": "file://BOX_FILE_NAME",
+                "checksum_type": "BOX_CHECKSUM_TYPE",
+                "checksum": "BOX_CHECKSUM"
+        }]
+    }
